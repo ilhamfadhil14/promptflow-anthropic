@@ -1,0 +1,20 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 290,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 283.1484375,
+      "y": 318.4375,
+      "index": -1
+    },
+    "llm": {
+      "x": 196.765625,
+      "y": 165.609375,
+      "index": 0
+    }
+  },
+  "orientation": "Vertical"
+}

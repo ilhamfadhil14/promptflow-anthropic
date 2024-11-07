@@ -1,0 +1,13 @@
+{
+  "nodes": {
+    "llm": {
+      "variant_0": {
+        "inputs": {
+          "model": [],
+          "question": [],
+          "chat_history": []
+        }
+      }
+    }
+  }
+}

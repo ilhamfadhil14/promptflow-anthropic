@@ -1,0 +1,26 @@
+inputs:
+  input:
+    type: string
+    default: kamu siapa?
+    is_chat_input: true
+    is_chat_history: false
+  chat_history:
+    type: list
+    default: []
+    is_chat_history: true
+outputs:
+  response:
+    type: string
+    reference: ${llm.output}
+nodes:
+- name: llm
+  type: llm
+  source:
+    type: code
+    path: llm.jinja2
+  inputs:
+    model: gpt-4
+    question: ${inputs.input}
+    chat_history: ${inputs.chat_history}
+  connection: anthropic_claude-35
+  api: chat

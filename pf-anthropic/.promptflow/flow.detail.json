@@ -1,0 +1,311 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "b32fdcf0-1219-496a-b764-b53001fa4994_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "input": "kamu siapa?",
+        "chat_history": []
+      },
+      "output": {
+        "response": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "b32fdcf0-1219-496a-b764-b53001fa4994",
+      "root_run_id": "b32fdcf0-1219-496a-b764-b53001fa4994",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2024-11-07T16:43:30.318578Z",
+      "end_time": "2024-11-07T16:43:32.497233Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1730972610.318578,
+          "end_time": 1730972612.497233,
+          "children": [
+            {
+              "name": "OpenAI.chat",
+              "type": "Function",
+              "inputs": {
+                "prompt": "\nsystem:\nYou are a helpful assistant.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+                "model": "gpt-4",
+                "question": "kamu siapa?",
+                "chat_history": [],
+                "_inputs_to_escape": [
+                  "question",
+                  "chat_history"
+                ],
+                "stream": false
+              },
+              "output": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+              "start_time": 1730972610.319626,
+              "end_time": 1730972612.496382,
+              "error": null,
+              "children": [
+                {
+                  "name": "openai_chat",
+                  "type": "LLM",
+                  "inputs": {
+                    "model": "gpt-4",
+                    "messages": [
+                      {
+                        "role": "system",
+                        "content": "You are a helpful assistant."
+                      },
+                      {
+                        "role": "user",
+                        "content": "kamu siapa?"
+                      }
+                    ],
+                    "temperature": 1.0,
+                    "top_p": 1.0,
+                    "n": 1,
+                    "stream": false,
+                    "max_tokens": null,
+                    "presence_penalty": 0.0,
+                    "frequency_penalty": 0.0,
+                    "user": ""
+                  },
+                  "output": {
+                    "id": "chatcmpl-2e75581e-d6e3-4d31-bdbf-5ba8c3923016",
+                    "choices": [
+                      {
+                        "finish_reason": "stop",
+                        "index": 0,
+                        "logprobs": null,
+                        "message": {
+                          "content": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+                          "refusal": null,
+                          "role": "assistant",
+                          "audio": null,
+                          "function_call": null,
+                          "tool_calls": null
+                        }
+                      }
+                    ],
+                    "created": 1730997812,
+                    "model": "claude-3-5-sonnet-20241022",
+                    "object": "chat.completion",
+                    "service_tier": null,
+                    "system_fingerprint": null,
+                    "usage": {
+                      "completion_tokens": 111,
+                      "prompt_tokens": 18,
+                      "total_tokens": 129,
+                      "completion_tokens_details": null,
+                      "prompt_tokens_details": {
+                        "audio_tokens": null,
+                        "cached_tokens": 0
+                      },
+                      "cache_creation_input_tokens": 0,
+                      "cache_read_input_tokens": 0
+                    }
+                  },
+                  "start_time": 1730972610.321478,
+                  "end_time": 1730972612.496223,
+                  "error": null,
+                  "children": [],
+                  "node_name": null,
+                  "parent_id": "8ee5f22e-929c-44e0-a73f-4fc149cc9b99",
+                  "id": "fa976025-2b3f-4a68-8ffe-cbc2912cdae5",
+                  "function": "openai.resources.chat.completions.Completions.create",
+                  "system_metrics": {
+                    "completion_tokens": 111,
+                    "prompt_tokens": 18,
+                    "total_tokens": 129
+                  }
+                }
+              ],
+              "node_name": "llm",
+              "parent_id": "",
+              "id": "8ee5f22e-929c-44e0-a73f-4fc149cc9b99",
+              "function": "OpenAI.chat",
+              "system_metrics": {
+                "completion_tokens": 111,
+                "prompt_tokens": 18,
+                "total_tokens": 129
+              }
+            }
+          ],
+          "system_metrics": {
+            "duration": 2.178655,
+            "prompt_tokens": 18,
+            "completion_tokens": 111,
+            "total_tokens": 129
+          },
+          "inputs": {
+            "input": "kamu siapa?",
+            "chat_history": []
+          },
+          "output": {
+            "response": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?"
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 2.178655,
+        "prompt_tokens": 18,
+        "completion_tokens": 111,
+        "total_tokens": 129
+      },
+      "result": {
+        "response": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?"
+      },
+      "upload_metrics": false,
+      "otel_trace_id": "0x79a88f37fe776b80e5ca36b29cb3e172",
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "llm",
+      "flow_run_id": "b32fdcf0-1219-496a-b764-b53001fa4994",
+      "run_id": "b32fdcf0-1219-496a-b764-b53001fa4994_llm_0",
+      "status": "Completed",
+      "inputs": {
+        "model": "gpt-4",
+        "question": "kamu siapa?",
+        "chat_history": [],
+        "_inputs_to_escape": [
+          "question",
+          "chat_history"
+        ]
+      },
+      "output": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "b32fdcf0-1219-496a-b764-b53001fa4994_0",
+      "start_time": "2024-11-07T16:43:30.319526Z",
+      "end_time": "2024-11-07T16:43:32.496848Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "OpenAI.chat",
+          "type": "Function",
+          "inputs": {
+            "prompt": "\nsystem:\nYou are a helpful assistant.\n\n{% for item in chat_history %}\nuser:\n{{item.inputs.question}}\nassistant:\n{{item.outputs.answer}}\n{% endfor %}\n\nuser:\n{{question}}\n",
+            "model": "gpt-4",
+            "question": "kamu siapa?",
+            "chat_history": [],
+            "_inputs_to_escape": [
+              "question",
+              "chat_history"
+            ],
+            "stream": false
+          },
+          "output": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+          "start_time": 1730972610.319626,
+          "end_time": 1730972612.496382,
+          "error": null,
+          "children": [
+            {
+              "name": "openai_chat",
+              "type": "LLM",
+              "inputs": {
+                "model": "gpt-4",
+                "messages": [
+                  {
+                    "role": "system",
+                    "content": "You are a helpful assistant."
+                  },
+                  {
+                    "role": "user",
+                    "content": "kamu siapa?"
+                  }
+                ],
+                "temperature": 1.0,
+                "top_p": 1.0,
+                "n": 1,
+                "stream": false,
+                "max_tokens": null,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                "user": ""
+              },
+              "output": {
+                "id": "chatcmpl-2e75581e-d6e3-4d31-bdbf-5ba8c3923016",
+                "choices": [
+                  {
+                    "finish_reason": "stop",
+                    "index": 0,
+                    "logprobs": null,
+                    "message": {
+                      "content": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+                      "refusal": null,
+                      "role": "assistant",
+                      "audio": null,
+                      "function_call": null,
+                      "tool_calls": null
+                    }
+                  }
+                ],
+                "created": 1730997812,
+                "model": "claude-3-5-sonnet-20241022",
+                "object": "chat.completion",
+                "service_tier": null,
+                "system_fingerprint": null,
+                "usage": {
+                  "completion_tokens": 111,
+                  "prompt_tokens": 18,
+                  "total_tokens": 129,
+                  "completion_tokens_details": null,
+                  "prompt_tokens_details": {
+                    "audio_tokens": null,
+                    "cached_tokens": 0
+                  },
+                  "cache_creation_input_tokens": 0,
+                  "cache_read_input_tokens": 0
+                }
+              },
+              "start_time": 1730972610.321478,
+              "end_time": 1730972612.496223,
+              "error": null,
+              "children": [],
+              "node_name": null,
+              "parent_id": "8ee5f22e-929c-44e0-a73f-4fc149cc9b99",
+              "id": "fa976025-2b3f-4a68-8ffe-cbc2912cdae5",
+              "function": "openai.resources.chat.completions.Completions.create",
+              "system_metrics": {
+                "completion_tokens": 111,
+                "prompt_tokens": 18,
+                "total_tokens": 129
+              }
+            }
+          ],
+          "node_name": "llm",
+          "parent_id": "",
+          "id": "8ee5f22e-929c-44e0-a73f-4fc149cc9b99",
+          "function": "OpenAI.chat",
+          "system_metrics": {
+            "completion_tokens": 111,
+            "prompt_tokens": 18,
+            "total_tokens": 129
+          }
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "completion_tokens": 111,
+        "prompt_tokens": 18,
+        "total_tokens": 129,
+        "duration": 2.177322
+      },
+      "result": "Saya adalah asisten AI yang dikembangkan oleh Anthropic untuk membantu manusia dengan berbagai tugas dan percakapan. Nama saya Claude. Saya dapat membantu Anda dengan berbagai hal seperti menjawab pertanyaan, memberikan informasi, atau membantu dengan tugas-tugas tertentu. Bagaimana saya bisa membantu Anda hari ini?",
+      "message_format": "basic"
+    }
+  ]
+}
